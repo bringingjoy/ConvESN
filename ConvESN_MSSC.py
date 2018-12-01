@@ -1,5 +1,5 @@
 import numpy as np
-import cPickle as cp
+import pickle as cp
 
 from keras.models import Model
 from keras.layers import Input, Dense, Dropout, concatenate
@@ -14,8 +14,8 @@ a p file is a list: [left_hand_skeleton, right_hand_skeleton, left_leg_skeleton,
 the shape of the first five ones: (num_samples, time_length, num_joints)
 the shape of the last one: (num_samples,)
 """
-filepath_train = './dataset/MSRAction3D_real_world_P4_Split_AS3_train.p'
-filepath_test = './dataset/MSRAction3D_real_world_P4_Split_AS3_test.p'
+filepath_train = './data/MSRAction3D_real_world_P4_Split_AS3_train.p'
+filepath_test = './data/MSRAction3D_real_world_P4_Split_AS3_test.p'
 data_train = cp.load(open(filepath_train, 'rb'))
 skeletons_train = data_train[0:5]
 labels_train = data_train[5]
